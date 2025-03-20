@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import BookCard from './components/bookcard'; // Corrected path
+import './App.css';
 
 function App() {
   const books = [
@@ -9,6 +10,7 @@ function App() {
       name: 'The Great Adventure',
       genre: 'Fiction',
       author: 'Jane Doe',
+      price: 19.99, // Added price
     },
     {
       id: 2,
@@ -16,6 +18,7 @@ function App() {
       name: 'Mysteries of the Universe',
       genre: 'Science',
       author: 'John Smith',
+      price: 25.50, // Added price
     },
     {
       id: 3,
@@ -23,6 +26,7 @@ function App() {
       name: 'History Revisited',
       genre: 'Non-Fiction',
       author: 'Emily Johnson',
+      price: 18.75, // Added price
     },
     {
       id: 4,
@@ -31,10 +35,20 @@ function App() {
       name: 'Culinary Delights',
       genre: 'Cooking',
       author: 'Michael Brown',
+      price: 30.00, // Added price
     },
   ];
 
-  return <>{/* write code to display all the books using */}</>;
+  return (
+    <div>
+      <h1>Book List</h1>
+      <div className="book-list">
+        {books.map((book) => (
+          <BookCard key={book.id} book={book} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;
